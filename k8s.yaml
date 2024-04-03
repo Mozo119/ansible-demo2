@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Set SELinux to permissive mode
+      selinux:
+        policy: targeted
+        state: permissive
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: Disable swap
+      command: swapoff -a
+

@@ -1,0 +1,7 @@
+- hosts: servera.example.com
+  tasks: 
+  - command: swapoff -a 
+  - mount:
+	name: none
+	fstype: swap
+	state: abent 
